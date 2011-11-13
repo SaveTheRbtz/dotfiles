@@ -1,14 +1,14 @@
 [alias]
-tree = log --oneline --decorate --graph
-	vimdiff = difftool
+    tree = log --oneline --decorate --graph
+    vimdiff = difftool
 [user]
-	name = Alexey Ivanov
-	email = rbtz@yandex-team.ru
+    name = Alexey Ivanov
+    email = rbtz@yandex-team.ru
 [color]
-	ui = true
+    ui = true
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = false
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
