@@ -1,12 +1,14 @@
-set tabstop=4 
+set tabstop=4
 set softtabstop=4
-set shiftwidth=4 
+set shiftwidth=4
 set expandtab
 set smarttab
 set smartindent
 
 set ruler
 set incsearch
+
+set nocompatible
 
 if &t_Co > 2 || has("gui_running")
     syntax on
