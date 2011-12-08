@@ -7,6 +7,7 @@ call vundle#rc()
     " Libs
         Bundle 'gmarik/vundle'
         Bundle 'L9'
+        Bundle 'spacehi.vim'
     " Interface
         " On ubuntu do not forget to run sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
         Bundle 'git://github.com/mileszs/ack.vim.git'
@@ -30,7 +31,7 @@ call vundle#rc()
     " Python/Django
         Bundle 'git://github.com/fs111/pydoc.vim.git'
 
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 
 " Settings
     set tabstop=4
