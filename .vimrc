@@ -10,26 +10,28 @@ call vundle#rc()
         Bundle 'spacehi.vim'
     " Interface
         " On ubuntu do not forget to run sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-        Bundle 'git://github.com/mileszs/ack.vim.git'
-        Bundle 'git://github.com/ervandew/supertab.git'
-        Bundle 'git://github.com/altercation/vim-colors-solarized.git'
-        Bundle 'git://github.com/scrooloose/nerdcommenter.git'
-        Bundle 'git://github.com/vim-scripts/vimwiki.git'
-        Bundle 'git://github.com/slack/vim-fuzzyfinder.git'
-        Bundle 'git://github.com/vim-scripts/taglist.vim.git'
-        Bundle 'git://github.com/scrooloose/nerdtree.git'
+        Bundle 'mileszs/ack.vim'
+        Bundle 'ervandew/supertab'
+        Bundle 'altercation/vim-colors-solarized'
+        Bundle 'scrooloose/nerdcommenter'
+        Bundle 'vim-scripts/vimwiki'
+        Bundle 'slack/vim-fuzzyfinder'
+        Bundle 'vim-scripts/taglist.vim'
+        Bundle 'scrooloose/nerdtree'
     " HTML
-        Bundle 'git://github.com/othree/html5.vim.git'
-        Bundle 'git://github.com/hokaccha/vim-html5validator.git'
-        Bundle 'git://github.com/gregsexton/MatchTag.git'
+        Bundle 'othree/html5.vim'
+        Bundle 'hokaccha/vim-html5validator'
+        Bundle 'gregsexton/MatchTag'
     " JavaScript
-        Bundle 'git://github.com/pangloss/vim-javascript.git'
-        Bundle 'git://github.com/itspriddle/vim-jquery.git'
-        Bundle 'git://github.com/kchmck/vim-coffee-script.git'
+        Bundle 'pangloss/vim-javascript'
+        Bundle 'itspriddle/vim-jquery'
+        Bundle 'kchmck/vim-coffee-script'
     " JSON
-        Bundle 'git://github.com/leshill/vim-json.git'
+        Bundle 'leshill/vim-json'
     " Python/Django
-        Bundle 'git://github.com/fs111/pydoc.vim.git'
+        Bundle 'fs111/pydoc.vim'
+        Bundle 'kevinw/pyflakes-vim'
+        Bundle 'nvie/vim-pep8'
 
 filetype plugin indent on     " required!
 
@@ -44,6 +46,7 @@ filetype plugin indent on     " required!
     " allow backspacing over everything in insert mode
     set backspace=indent,eol,start
 
+    set hlsearch
     set incsearch
     set ignorecase
     set smartcase
@@ -67,8 +70,6 @@ filetype plugin indent on     " required!
     set splitright
 
     syntax on
-    colorscheme elflord
-    set hlsearch
 
 " Russian langmap
     set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж\:,Э\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б\<,Ю\>,Ё\~
@@ -128,12 +129,23 @@ filetype plugin indent on     " required!
 " Environment
     cmap w!! %!sudo tee > /dev/null %
 
-" Solarized
-    syntax enable
-    let g:solarized_termcolors=256
-    set background=dark
-    colorscheme solarized
-    call togglebg#map("<Leader>b")
+" Plugins
+    " Solarized
+        syntax enable
+        let g:solarized_termcolors=256
+        set background=dark
+        colorscheme solarized
+        call togglebg#map("<Leader>b")
+
+    " NERDTree
+            nmap <Bs> :NERDTreeToggle<CR>
+            let NERDTreeShowBookmarks=1
+            let NERDTreeChDirMode=2
+            let NERDTreeQuitOnOpen=1
+            let NERDTreeShowHidden=1
+            let NERDTreeKeepTreeInNewTab=0
+            let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
+            let NERDTreeDirArrows=1 " Tells the NERD tree to use arrows instead of + ~ chars when displaying directories.
 
 " Restore cursor position on reopen
     function! ResCur()
