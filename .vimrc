@@ -4,15 +4,20 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " Bundles
-    " Libs
-        Bundle 'gmarik/vundle'
+    Bundle 'gmarik/vundle'
+    " Misc
         Bundle 'L9'
         Bundle 'spacehi.vim'
+    "Buffer
+        Bundle 'lastpos.vim'
+        Bundle 'bufpos'
+        Bundle 'buftabs'
     " Interface
         " On ubuntu do not forget to run sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
         Bundle 'mileszs/ack.vim'
         Bundle 'ervandew/supertab'
         Bundle 'altercation/vim-colors-solarized'
+        Bundle 'molokai'
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'vim-scripts/vimwiki'
         Bundle 'slack/vim-fuzzyfinder'
@@ -26,50 +31,55 @@ call vundle#rc()
         Bundle 'pangloss/vim-javascript'
         Bundle 'itspriddle/vim-jquery'
         Bundle 'kchmck/vim-coffee-script'
+    " C/C++
+        Bundle 'c.vim'
+        Bundle 'a.vim'
     " JSON
         Bundle 'leshill/vim-json'
     " Python/Django
         Bundle 'fs111/pydoc.vim'
-        Bundle 'kevinw/pyflakes-vim'
+        Bundle 'python.vim'
         Bundle 'nvie/vim-pep8'
+        Bundle 'pyflakes.vim'
 
 filetype plugin indent on     " required!
 
 " Settings
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-    set expandtab
-    set smarttab
-    set autoindent
-    set smartindent
-    " allow backspacing over everything in insert mode
-    set backspace=indent,eol,start
+    " Tabs
+        set tabstop=4
+        set softtabstop=4
+        set shiftwidth=4
+        set expandtab
+        set smarttab
+        set autoindent
+        set smartindent
+        set backspace=indent,eol,start
+    " Search
+        set hlsearch
+        set incsearch
+        set ignorecase
+        set smartcase
+    " Misc
+        set hidden
+        set cursorline
+        set showtabline=1
+        set wrap
+        set encoding=utf-8
+        set fileencodings=utf8,cp1251
+        set wildmenu
+        set title
+        set showcmd
+        set list
 
-    set hlsearch
-    set incsearch
-    set ignorecase
-    set smartcase
+        if version >= 703
+            set colorcolumn=140
+        end
 
-    set cursorline
-    set showtabline=1
-    set wrap
-    set encoding=utf-8
-    set fileencodings=utf8,cp1251
-    set wildmenu
-    set title
-    set showcmd
-    set list
+        set t_Co=256
+        set splitbelow
+        set splitright
 
-    if version >= 703
-        set colorcolumn=140
-    end
-
-    set t_Co=256
-    set splitbelow
-    set splitright
-
-    syntax on
+        syntax on
 
 " Russian langmap
     set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж\:,Э\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б\<,Ю\>,Ё\~
@@ -138,24 +148,15 @@ filetype plugin indent on     " required!
         call togglebg#map("<Leader>b")
 
     " NERDTree
-            nmap <Bs> :NERDTreeToggle<CR>
-            let NERDTreeShowBookmarks=1
-            let NERDTreeChDirMode=2
-            let NERDTreeQuitOnOpen=1
-            let NERDTreeShowHidden=1
-            let NERDTreeKeepTreeInNewTab=0
-            let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
-            let NERDTreeDirArrows=1 " Tells the NERD tree to use arrows instead of + ~ chars when displaying directories.
+        nmap <Bs> :NERDTreeToggle<CR>
+        let NERDTreeShowBookmarks=1
+        let NERDTreeChDirMode=2
+        let NERDTreeQuitOnOpen=1
+        let NERDTreeShowHidden=1
+        let NERDTreeKeepTreeInNewTab=0
+        let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
+        let NERDTreeDirArrows=1 " Tells the NERD tree to use arrows instead of + ~ chars when displaying directories.
 
-" Restore cursor position on reopen
-    function! ResCur()
-      if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-      endif
-    endfunction
-
-    augroup resCur
-      autocmd!
-      autocmd BufWinEnter * call ResCur()
-    augroup END
+    " buftabs
+        :noremap <C-left> :bprev<CR>
+        :noremap <C-right> :bnext<CR>
