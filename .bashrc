@@ -1,6 +1,6 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
+
+export LC_ALL=en_US.UTF-8
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -95,13 +95,21 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# Ubuntu's bash completions
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+# BSD's bash completions
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
+
 
 DEBEMAIL="rbtz@yandex-team.ru"
 DEBFULLNAME="Alexey Ivanov"
 export DEBEMAIL DEBFULLNAME
+
+export PAGER="less -R"
+
+wiki() { dig +short txt $1.wp.dg.cx; }
+qs() { make -C /usr/ports quicksearch name=$1; }
