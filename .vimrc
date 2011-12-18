@@ -69,7 +69,7 @@ filetype plugin indent on     " required!
         set wildmenu
         set title
         set showcmd
-        set list
+        set nolist
 
         if version >= 703
             set colorcolumn=140
