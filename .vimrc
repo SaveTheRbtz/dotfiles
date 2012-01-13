@@ -32,7 +32,6 @@ call vundle#rc()
         Bundle 'itspriddle/vim-jquery'
         Bundle 'kchmck/vim-coffee-script'
     " C/C++
-        Bundle 'c.vim'
         Bundle 'a.vim'
     " JSON
         Bundle 'leshill/vim-json'
