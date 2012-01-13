@@ -66,6 +66,9 @@ filetype plugin indent on     " required!
         set encoding=utf-8
         set fileencodings=utf8,cp1251
         set wildmenu
+        set wildignore+=.hg,.git,.svn
+        set wildignore+=*.DS_Store
+        set wildignore+=*.pyc
         set title
         set showcmd
         set nolist
