@@ -129,22 +129,22 @@ filetype plugin indent on     " required!
     map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
     " Fix Trailing White Space
     map <leader>ts :%s/\s\+$//e<CR>
-    " ,bl show buffers
     nmap <Leader>bl :ls<cr>:b
-    " ,bp prev buffer
     nmap <Leader>bp :bp<cr>
-    " ,bn next buffer
     nmap <Leader>bn :bn<cr>
 
 " Environment
-    cmap w!! %!sudo tee > /dev/null %
+    command! W exec 'w !sudo tee % > /dev/null' | e!
+
+" Temp dirs
+    set backupdir=~/.vim/backup,/tmp
+    set directory=~/.vim/swp//,/tmp
 
 " Plugins
-    " Solarized
+    " Molokai
         syntax enable
-        let g:solarized_termcolors=256
         set background=dark
-        colorscheme solarized
+        colorscheme molokai
         call togglebg#map("<Leader>b")
 
     " NERDTree
