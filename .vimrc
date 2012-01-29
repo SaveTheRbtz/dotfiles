@@ -40,6 +40,7 @@ call vundle#rc()
         Bundle 'python.vim'
         Bundle 'nvie/vim-pep8'
         Bundle 'pyflakes.vim'
+        Bundle 'indent/python.vim'
 
 filetype plugin indent on     " required!
 
