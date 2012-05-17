@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 
+import logging as log
+
+if __debug__:
+    log.basicConfig(level=log.DEBUG)
+else:
+    log.basicConfig()
+
 def main():
     pass
 
