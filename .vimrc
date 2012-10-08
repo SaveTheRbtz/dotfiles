@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+filetype on                    " required!
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -13,30 +14,12 @@ call vundle#rc()
         Bundle 'bufpos'
         Bundle 'buftabs'
     " Interface
-        " On ubuntu do not forget to run sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-        Bundle 'mileszs/ack.vim'
-        Bundle 'ervandew/supertab'
-        Bundle 'altercation/vim-colors-solarized'
         Bundle 'molokai'
         Bundle 'scrooloose/nerdcommenter'
-        Bundle 'vim-scripts/vimwiki'
-        Bundle 'slack/vim-fuzzyfinder'
-        Bundle 'vim-scripts/taglist.vim'
         Bundle 'scrooloose/nerdtree'
-    " HTML
-        Bundle 'othree/html5.vim'
-        Bundle 'hokaccha/vim-html5validator'
-        Bundle 'gregsexton/MatchTag'
-    " JavaScript
-        Bundle 'pangloss/vim-javascript'
-        Bundle 'itspriddle/vim-jquery'
-        Bundle 'kchmck/vim-coffee-script'
     " C/C++
         Bundle 'a.vim'
-    " JSON
-        Bundle 'leshill/vim-json'
     " Python/Django
-        Bundle 'fs111/pydoc.vim'
         Bundle 'python.vim'
         Bundle 'nvie/vim-pep8'
         Bundle 'pyflakes.vim'
@@ -148,7 +131,6 @@ filetype plugin indent on     " required!
         syntax enable
         set background=dark
         colorscheme molokai
-        call togglebg#map("<Leader>b")
 
     " NERDTree
         nmap <Bs> :NERDTreeToggle<CR>
