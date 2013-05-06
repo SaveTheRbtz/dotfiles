@@ -16,9 +16,11 @@ call vundle#rc()
     " Interface
         Bundle 'molokai'
         Bundle 'scrooloose/nerdcommenter'
+        Bundle 'scrooloose/syntastic'
         Bundle 'scrooloose/nerdtree'
     " C/C++
         Bundle 'a.vim'
+        Bundle 'taglist.vim'
     " Python/Django
         Bundle 'python.vim'
         Bundle 'nvie/vim-pep8'
@@ -58,7 +60,7 @@ filetype plugin indent on     " required!
         set nolist
 
         if version >= 703
-            set colorcolumn=140
+            set colorcolumn=132
         end
 
         set t_Co=256
@@ -84,7 +86,7 @@ filetype plugin indent on     " required!
     endfunction
 
     function! CurDir()
-        let curdir = substitute(expand('%:p'), '/home/miripiruni', '~', 'g')
+        let curdir = substitute(expand('%:p'), '/Users/rbtz', '~', 'g')
         return curdir
     endfunction
 
@@ -119,9 +121,6 @@ filetype plugin indent on     " required!
     nmap <Leader>bp :bp<cr>
     nmap <Leader>bn :bn<cr>
 
-" Environment
-    command! W exec 'w !sudo tee % > /dev/null' | e!
-
 " Temp dirs
     set backupdir=~/.vim/backup,/tmp
     set directory=~/.vim/swp//,/tmp
@@ -145,3 +144,10 @@ filetype plugin indent on     " required!
     " buftabs
         :noremap <C-left> :bprev<CR>
         :noremap <C-right> :bnext<CR>
+
+    " Tags
+        nmap <Del> :TlistToggle<CR>
+
+" Autocmds
+    autocmd FileType c,cpp set tabstop=8 | set shiftwidth=8 | set softtabstop=8 | set noexpandtab
+    autocmd FileType py set tabstop=4 | set shiftwidth=4 | set softtabstop=4 | set expandtab
