@@ -15,6 +15,7 @@ call vundle#rc()
         Bundle 'buftabs'
     " Interface
         Bundle 'molokai'
+        Bundle 'altercation/vim-colors-solarized.git'
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/syntastic'
         Bundle 'scrooloose/nerdtree'
@@ -126,10 +127,10 @@ filetype plugin indent on     " required!
     set directory=~/.vim/swp//,/tmp
 
 " Plugins
-    " Molokai
+    " Solarized
         syntax enable
         set background=dark
-        colorscheme molokai
+        colorscheme solarized
 
     " NERDTree
         nmap <Bs> :NERDTreeToggle<CR>
@@ -140,6 +141,9 @@ filetype plugin indent on     " required!
         let NERDTreeKeepTreeInNewTab=0
         let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
         let NERDTreeDirArrows=1 " Tells the NERD tree to use arrows instead of + ~ chars when displaying directories.
+
+    " Syntactic
+        let g:syntastic_cpp_compiler_options = '-std=c++0x'
 
     " buftabs
         :noremap <C-left> :bprev<CR>
