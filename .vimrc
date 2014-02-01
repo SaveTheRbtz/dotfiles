@@ -71,7 +71,6 @@ filetype plugin indent on     " required!
             set colorcolumn=132
         end
 
-        set t_Co=256
         set splitbelow
         set splitright
 
@@ -135,6 +134,7 @@ filetype plugin indent on     " required!
     " Solarized
         syntax enable
         set t_ut=
+        set t_Co=256
         set background=dark
         "let g:solarized_termtrans=1
         let g:solarized_termcolors=256
