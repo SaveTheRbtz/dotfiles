@@ -71,6 +71,7 @@ filetype plugin indent on     " required!
             set colorcolumn=132
         end
 
+        set ttyfast
         set splitbelow
         set splitright
 
@@ -133,6 +134,7 @@ filetype plugin indent on     " required!
 " Plugins
     " Solarized
         syntax enable
+        set term=xterm-256color
         set t_ut=
         set t_Co=256
         set background=dark
