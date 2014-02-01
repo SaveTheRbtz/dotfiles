@@ -134,8 +134,9 @@ filetype plugin indent on     " required!
 " Plugins
     " Solarized
         syntax enable
+        set t_ut=
         set background=dark
-        let g:solarized_termtrans=1
+        "let g:solarized_termtrans=1
         let g:solarized_termcolors=256
         let g:solarized_visibility="high"
         let g:solarized_contrast="high"
