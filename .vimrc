@@ -9,24 +9,31 @@ call vundle#rc()
     " Misc
         Bundle 'L9'
         Bundle 'spacehi.vim'
-    "Buffer
+    " Buffer
         Bundle 'lastpos.vim'
         Bundle 'bufpos'
         Bundle 'buftabs'
-    " Interface
+    " Colorschemes
         Bundle 'molokai'
-        Bundle 'altercation/vim-colors-solarized.git'
+        Bundle 'altercation/vim-colors-solarized'
+    " Interface
         Bundle 'scrooloose/nerdcommenter'
         Bundle 'scrooloose/syntastic'
         Bundle 'scrooloose/nerdtree'
     " C/C++
         Bundle 'a.vim'
         Bundle 'taglist.vim'
+    " Go
+        Bundle 'go.vim'
     " Python/Django
         Bundle 'python.vim'
         Bundle 'nvie/vim-pep8'
         Bundle 'pyflakes.vim'
         Bundle 'indent/python.vim'
+    " SCM
+        Bundle 'tpope/vim-fugitive'
+    " Templaters
+        Bundle "lepture/vim-jinja"
 
 filetype plugin indent on     " required!
 
@@ -130,6 +137,10 @@ filetype plugin indent on     " required!
     " Solarized
         syntax enable
         set background=dark
+        let g:solarized_termtrans=1
+        let g:solarized_termcolors=256
+        let g:solarized_visibility="high"
+        let g:solarized_contrast="high"
         colorscheme solarized
 
     " NERDTree
@@ -155,3 +166,4 @@ filetype plugin indent on     " required!
 " Autocmds
     autocmd FileType c,cpp set tabstop=8 | set shiftwidth=8 | set softtabstop=8 | set noexpandtab
     autocmd FileType py set tabstop=4 | set shiftwidth=4 | set softtabstop=4 | set expandtab
+    autocmd BufRead,BufNewFile *.go set filetype=go
