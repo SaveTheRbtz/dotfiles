@@ -9,6 +9,7 @@ call vundle#rc()
     " Misc
         Bundle 'L9'
         Bundle 'spacehi.vim'
+        Bundle 'nacitar/terminalkeys.vim'
     " Buffer
         Bundle 'lastpos.vim'
         Bundle 'bufpos'
@@ -24,12 +25,13 @@ call vundle#rc()
         Bundle 'a.vim'
         Bundle 'taglist.vim'
     " Go
-        Bundle 'go.vim'
+        Bundle 'fatih/vim-go'
+        Bundle 'majutsushi/tagbar'
+        Bundle 'Valloric/YouCompleteMe'
     " Python/Django
         Bundle 'python.vim'
         Bundle 'nvie/vim-pep8'
         Bundle 'pyflakes.vim'
-        Bundle 'indent/python.vim'
     " SCM
         Bundle 'tpope/vim-fugitive'
     " Templaters
@@ -163,6 +165,50 @@ filetype plugin indent on     " required!
 
     " Tags
         nmap <Del> :TlistToggle<CR>
+
+    " Go
+        au FileType go nmap <Leader>i <Plug>(go-info)
+        au FileType go nmap <Leader>gd <Plug>(go-doc)
+        au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+        au FileType go nmap <leader>r <Plug>(go-run)
+        au FileType go nmap <leader>b <Plug>(go-build)
+        au FileType go nmap <leader>t <Plug>(go-test)
+        au FileType go nmap <leader>c <Plug>(go-coverage)
+        au FileType go nmap gd <Plug>(go-def)
+        au FileType go nmap <Leader>ds <Plug>(go-def-split)
+        au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+        au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+        au FileType go nested :TagbarOpen
+
+        nnoremap <leader>l :TagbarToggle<CR>
+
+        let g:tagbar_type_go = {
+            \ 'ctagstype' : 'go',
+            \ 'kinds'     : [
+                \ 'p:package',
+                \ 'i:imports:1',
+                \ 'c:constants',
+                \ 'v:variables',
+                \ 't:types',
+                \ 'n:interfaces',
+                \ 'w:fields',
+                \ 'e:embedded',
+                \ 'm:methods',
+                \ 'r:constructor',
+                \ 'f:functions'
+            \ ],
+            \ 'sro' : '.',
+            \ 'kind2scope' : {
+                \ 't' : 'ctype',
+                \ 'n' : 'ntype'
+            \ },
+            \ 'scope2kind' : {
+                \ 'ctype' : 't',
+                \ 'ntype' : 'n'
+            \ },
+            \ 'ctagsbin'  : 'gotags',
+            \ 'ctagsargs' : '-sort -silent'
+        \ }
 
 " Autocmds
     autocmd FileType c,cpp set tabstop=8 | set shiftwidth=8 | set softtabstop=8 | set noexpandtab
