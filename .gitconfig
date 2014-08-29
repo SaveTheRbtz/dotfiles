@@ -1,16 +1,21 @@
 [alias]
-    tree = log --oneline --decorate --graph
-    vimdiff = difftool
+	tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	vimdiff = difftool
+	up = "!git remote update -p; git merge --ff-only @{u}"
 [user]
-    name = Alexey Ivanov
-    email = SaveTheRbtz@GMail.com
+	name = Alexey Ivanov
+	email = SaveTheRbtz@GMail.com
 [color]
-    ui = true
+	ui = true
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 [difftool]
-    prompt = false
+	prompt = false
 [branch]
-    autosetuprebase = always
+	autosetuprebase = always
 [push]
-    default = simple
+	default = tracking
+[pull]
+	rebase = preserve
+[gc]
+	auto = 1
