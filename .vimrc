@@ -10,10 +10,11 @@ call vundle#begin()
         Plugin 'L9'
         Plugin 'spacehi.vim'
         Plugin 'nacitar/terminalkeys.vim'
+    " Statusline
+        Plugin 'bling/vim-airline'
     " Buffer
         Plugin 'lastpos.vim'
         Plugin 'bufpos'
-        Plugin 'buftabs'
     " Colorschemes
         Plugin 'molokai'
         Plugin 'altercation/vim-colors-solarized'
@@ -80,39 +81,6 @@ filetype plugin indent on    " required
 " Russian langmap
     set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж\:,Э\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б\<,Ю\>,Ё\~
 
-" Status line
-    function! FileSize()
-        let bytes = getfsize(expand("%:p"))
-        if bytes <= 0
-            return ""
-        endif
-        if bytes < 1024
-            return bytes . "B"
-        else
-            return (bytes / 1024) . "K"
-        endif
-    endfunction
-
-    function! CurDir()
-        let curdir = substitute(expand('%:p'), '/Users/rbtz', '~', 'g')
-        return curdir
-    endfunction
-
-    set laststatus=2
-    set statusline=\ 
-    set statusline+=%n:\ " buffer number
-    set statusline+=%t " filename with full path
-    set statusline+=\ \ 
-    set statusline+=%{&paste?'[paste]\ ':''}
-    set statusline+=%{&fileencoding}
-    set statusline+=\ \ %Y " type of file
-    set statusline+=\ %3.3(%c%) " column number
-    set statusline+=\ \ %3.9(%l/%L%) " line / total lines
-    set statusline+=\ \ %2.3p%% " percentage through file in lines
-    set statusline+=\ \ %{FileSize()}
-    set statusline+=%< " where truncate if line too long
-    set statusline+=\ \ CurDir:%{CurDir()}
-
 " Ruler
     set ruler
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
@@ -134,6 +102,10 @@ filetype plugin indent on    " required
     set directory=~/.vim/swp//,/tmp
 
 " Plugins
+    " Status line
+        let g:airline#extensions#tabline#enabled = 1
+        set laststatus=2
+
     " Solarized
         syntax enable
         set term=xterm-256color
