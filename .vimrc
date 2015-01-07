@@ -2,42 +2,42 @@ set nocompatible               " be iMproved
 filetype on                    " required!
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" Bundles
-    Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+" Plugins
+    Plugin 'gmarik/Vundle.vim'
     " Misc
-        Bundle 'L9'
-        Bundle 'spacehi.vim'
-        Bundle 'nacitar/terminalkeys.vim'
+        Plugin 'L9'
+        Plugin 'spacehi.vim'
+        Plugin 'nacitar/terminalkeys.vim'
     " Buffer
-        Bundle 'lastpos.vim'
-        Bundle 'bufpos'
-        Bundle 'buftabs'
+        Plugin 'lastpos.vim'
+        Plugin 'bufpos'
+        Plugin 'buftabs'
     " Colorschemes
-        Bundle 'molokai'
-        Bundle 'altercation/vim-colors-solarized'
+        Plugin 'molokai'
+        Plugin 'altercation/vim-colors-solarized'
     " Interface
-        Bundle 'scrooloose/nerdcommenter'
-        Bundle 'scrooloose/syntastic'
-        Bundle 'scrooloose/nerdtree'
+        Plugin 'scrooloose/nerdcommenter'
+        Plugin 'scrooloose/syntastic'
+        Plugin 'scrooloose/nerdtree'
     " C/C++
-        Bundle 'a.vim'
-        Bundle 'taglist.vim'
+        Plugin 'a.vim'
+        Plugin 'taglist.vim'
     " Go
-        Bundle 'fatih/vim-go'
-        Bundle 'majutsushi/tagbar'
-        Bundle 'Valloric/YouCompleteMe'
+        Plugin 'fatih/vim-go'
+        Plugin 'majutsushi/tagbar'
+        Plugin 'Valloric/YouCompleteMe'
     " Python/Django
-        Bundle 'python.vim'
-        Bundle 'nvie/vim-pep8'
-        Bundle 'pyflakes.vim'
+        Plugin 'python.vim'
+        Plugin 'nvie/vim-pep8'
+        Plugin 'pyflakes.vim'
     " SCM
-        Bundle 'tpope/vim-fugitive'
+        Plugin 'tpope/vim-fugitive'
     " Templaters
-        Bundle "lepture/vim-jinja"
-
-filetype plugin indent on     " required!
+        Plugin 'lepture/vim-jinja'
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Settings
     " Tabs
