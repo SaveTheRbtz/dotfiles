@@ -95,8 +95,7 @@ filetype plugin indent on    " required
     " Fix Trailing White Space
     map <leader>ts :%s/\s\+$//e<CR>
     nmap <Leader>bl :ls<cr>:b
-    nmap <Leader>bp :bp<cr>
-    nmap <Leader>bn :bn<cr>
+    nmap <Leader>d :bd<cr>
 
 " Temp dirs
     set backupdir=~/.vim/backup,/tmp
