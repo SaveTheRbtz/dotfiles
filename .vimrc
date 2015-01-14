@@ -9,6 +9,7 @@ call vundle#begin()
     " Misc
         Plugin 'L9'
         Plugin 'spacehi.vim'
+        Plugin 'vim-scripts/haproxy'
         Plugin 'nacitar/terminalkeys.vim'
     " Statusline
         Plugin 'bling/vim-airline'
