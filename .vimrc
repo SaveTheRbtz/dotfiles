@@ -29,7 +29,7 @@ call vundle#begin()
     " Go
         Plugin 'fatih/vim-go'
         Plugin 'majutsushi/tagbar'
-        Plugin 'Valloric/YouCompleteMe'
+        "Plugin 'Valloric/YouCompleteMe'
     " Python/Django
         Plugin 'python.vim'
         Plugin 'nvie/vim-pep8'
