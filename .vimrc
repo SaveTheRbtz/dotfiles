@@ -189,3 +189,5 @@ filetype plugin indent on    " required
     autocmd FileType c,cpp set tabstop=8 | set shiftwidth=8 | set softtabstop=8 | set noexpandtab
     autocmd FileType py set tabstop=4 | set shiftwidth=4 | set softtabstop=4 | set expandtab
     autocmd BufRead,BufNewFile *.go set filetype=go
+    autocmd BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,*/nginx-*.conf if &ft == '' | setfiletype nginx | endif
+    autocmd BufRead,BufNewFile haproxy* set ft=haproxy
