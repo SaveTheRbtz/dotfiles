@@ -9,8 +9,8 @@ zstyle ':vcs_info:*' stagedstr ' %F{2}M%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' get-bookmarks true
 zstyle ':vcs_info:*' get-mq true
-zstyle ':vcs_info:*' formats "[%F{2}%b%f%u%c%m] "
-zstyle ':vcs_info:*' actionformats "[%F{2}%b%f%u%c] %F{4}%a%f "
+zstyle ':vcs_info:*' formats "[%F{2}%b%f%u%c%m]"
+zstyle ':vcs_info:*' actionformats "[%F{2}%b%f%u%c] %F{4}%a%f"
 zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash git-untracked
 
 # Show number of commits ahead or behind of the remote
