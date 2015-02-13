@@ -66,12 +66,11 @@ function RCMD() {
 
 function setup-prompt() {
   git_info=$1
-  PROMPT="𝛌 %2c%{$fg[yellow]%}%(1j. %j.)%{$reset_color%} $git_info"
+  PROMPT="𝛌 %2c%{$fg[yellow]%}%(1j. %j.)%{$reset_color%} "
+  RPROMPT="$git_info"
 }
 setup-prompt ""
 
-# http://www.anishathalye.com/2015/02/07/an-asynchronous-shell-prompt/
-# https://github.com/anishathalye/dotfiles
 ASYNC_PROC=0
 function right-prompt() {
   function async() {
