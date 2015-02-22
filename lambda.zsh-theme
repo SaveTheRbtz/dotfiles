@@ -66,7 +66,7 @@ function RCMD() {
 
 function setup-prompt() {
   git_info=$1
-  PROMPT="𝛌 %2c%{$fg[yellow]%}%(1j. %j.)%{$reset_color%} "
+  PROMPT="𝛌 %~%{$fg[yellow]%}%(1j. %j.)%{$reset_color%} "
   RPROMPT="$git_info"
 }
 setup-prompt ""
