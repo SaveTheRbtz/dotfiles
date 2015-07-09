@@ -11,6 +11,7 @@ call vundle#begin()
         Plugin 'spacehi.vim'
         Plugin 'vim-scripts/haproxy'
         Plugin 'nacitar/terminalkeys.vim'
+        Plugin 'godlygeek/tabular'
     " Statusline
         Plugin 'bling/vim-airline'
     " Buffer
@@ -23,9 +24,13 @@ call vundle#begin()
         Plugin 'scrooloose/nerdcommenter'
         Plugin 'scrooloose/syntastic'
         Plugin 'scrooloose/nerdtree'
+        Plugin 'kien/ctrlp.vim'
     " C/C++
         Plugin 'a.vim'
         Plugin 'taglist.vim'
+    "Lua
+        Plugin 'xolox/vim-misc'
+        Plugin 'xolox/vim-lua-inspect'
     " Go
         Plugin 'fatih/vim-go'
         Plugin 'majutsushi/tagbar'
@@ -38,6 +43,10 @@ call vundle#begin()
         Plugin 'tpope/vim-fugitive'
     " Templaters
         Plugin 'lepture/vim-jinja'
+    " Puppet
+        Plugin 'rodjek/vim-puppet'
+    " Markdown
+        Plugin 'plasticboy/vim-markdown'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
