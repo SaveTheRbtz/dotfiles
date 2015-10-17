@@ -150,6 +150,11 @@ filetype plugin indent on    " required
     " Tags
         nmap <Del> :TlistToggle<CR>
 
+    " Lua
+        let g:lua_inspect_events = ''
+        imap <F6> <C-o>:LuaInspectToggle<CR>
+        nmap <F6>      :LuaInspectToggle<CR>
+
     " Go
         au FileType go nmap <Leader>i <Plug>(go-info)
         au FileType go nmap <Leader>gd <Plug>(go-doc)
