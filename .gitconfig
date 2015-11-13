@@ -19,3 +19,7 @@
 	rebase = preserve
 [gc]
 	auto = 1
+[format]
+	pretty = format:"%C(auto,yellow)commit %C(auto)%H%d\nAuthor: %an <%ae>\nDate:   %cd\n\n%w(0,4,4)%B"
+[log]
+	date = local
