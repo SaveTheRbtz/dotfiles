@@ -1,3 +1,6 @@
+PROMPTLOCKFILE="$HOME/.zsh_tmp_prompt.lock"
+PROMPTFILE="$HOME/.zsh_tmp_prompt"
+
 autoload -U add-zsh-hook
 autoload -U colors && colors
 autoload -Uz vcs_info
@@ -68,7 +71,7 @@ function RCMD() {
 
 function setup-prompt() {
   git_info=$1
-  PROMPT="𝛌 %~%{$fg[yellow]%}%(1j. %j.)%{$reset_color%} "
+  PROMPT="%(?.%f.%F{red})𝛌%f %~%{$fg[yellow]%}%(1j. %j.)%{$reset_color%} "
   RPROMPT="$git_info"
 }
 setup-prompt ""
@@ -76,8 +79,12 @@ setup-prompt ""
 ASYNC_PROC=0
 function right-prompt() {
   function async() {
-    # save to temp file
-    printf "%s" "$(RCMD)" > "$HOME/.zsh_tmp_prompt"
+    # lock the prompt
+    /usr/bin/shlock -p $$ -f $PROMPTLOCKFILE
+    if [ $? -eq 0 ]; then
+        # save to temp file
+        printf "%s" "$(RCMD)" > $PROMPTFILE
+    fi
 
     # signal parent
     kill -s USR1 $$
@@ -96,7 +103,10 @@ add-zsh-hook precmd right-prompt
 
 function TRAPUSR1() {
   # read from temp file
-  setup-prompt "$(cat $HOME/.zsh_tmp_prompt)"
+  setup-prompt "$(cat $PROMPTFILE)"
+
+  # cleanup lock
+  rm $PROMPTLOCKFILE
 
   # reset proc number
   ASYNC_PROC=0
