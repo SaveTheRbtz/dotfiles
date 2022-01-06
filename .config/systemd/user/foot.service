@@ -1,0 +1,11 @@
+[Unit]
+Description=Foo Terminal
+
+[Service]
+Environment=DISPLAY=:0 
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/foot -s
+
+[Install]
+WantedBy=default.target
