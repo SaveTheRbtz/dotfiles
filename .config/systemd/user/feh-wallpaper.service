@@ -1,0 +1,10 @@
+[Unit]
+Description=Random wallpaper with feh
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0 
+ExecStart=/usr/bin/swaymsg "output * bg $(find ~/Wallpapers/ -type f | shuf -n1) fill"
+
+[Install]
+WantedBy=default.target
