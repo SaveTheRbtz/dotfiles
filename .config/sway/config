@@ -11,7 +11,7 @@ font pango:JetBrains Mono Regular 10
 set $mod Mod4
 
 # Your preferred terminal emulator
-set $term footclient
+set $term alacritty
 # Your preferred application launcher
 set $menu wofi --show drun
 
@@ -32,20 +32,10 @@ bindswitch --reload lid:on output eDP-1 disable
 bindswitch --reload lid:off output eDP-1 enable
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+
 output * bg /home/rbtz/Wallpapers/wallhaven-115399.jpg fill
-#
-# Example configuration:
-#
-#output eDP-1 scale 2
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Input configuration
-#
-# Example configuration:
-
 input type:touchpad {
     dwt enabled
     tap enabled
@@ -54,7 +44,7 @@ input type:touchpad {
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_options "grp:win_space_toggle,altwin:swap_lalt_lwin"
+    xkb_options "grp:alt_space_toggle,altwin:swap_lalt_lwin"
 }
 
 input "12815:20548:Glorious_GMMK_Pro_Keyboard" {
@@ -63,6 +53,7 @@ input "12815:20548:Glorious_GMMK_Pro_Keyboard" {
 
 input * {
     xkb_layout "us,ru"
+    xkb_options "grp:win_space_toggle"
 }
 
 seat * hide_cursor 8000
